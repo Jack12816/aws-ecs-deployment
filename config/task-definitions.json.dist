@@ -1,0 +1,32 @@
+[
+  {
+    "name": "application",
+    "image": "${IMAGE_URI}",
+    "memory": 900,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp",
+        "hostPort": 80
+      }
+    ],
+    "environment": [
+${ENV_VARS}
+    ],
+    "mountPoints": [],
+    "volumesFrom": [],
+    "extraHosts": [],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "${AWS_ECC_REGION}",
+        "awslogs-group": "${CANONICAL_NAME}"
+      }
+    },
+    "ulimits": [],
+    "dockerLabels": {
+      "app": "${CANONICAL_NAME}"
+    }
+  }
+]

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "application",
+    "image": "000000000000.dkr.ecr.eu-west-1.amazonaws.com/shp-stage:0xx0x0xx0000000xx0xxxx00000x000xx00xx00x",
+    "memory": 900,
+    "essential": true,
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp",
+        "hostPort": 80
+      }
+    ],
+    "environment": [
+        {"name": "APP_ASSET_HOST", "value": "xxxxxxxxxxxxxx.xxxxxxxxxx.xxx"},
+        {"name": "APP_HOST", "value": "xxx-xxxxx-xxxxxxxxx.xx-xxxx-x.xxx.xxxxxxxxx.xxx"},
+        {"name": "APP_SECRET", "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
+        {"name": "BUCKET_NAME", "value": "xxx-xxxxx"},
+        {"name": "DB_HOST", "value": "xxx-xxxxx.xxxxxxxxxx.xxxxxx.xxx.xxxxxxxxx.xxx"},
+        {"name": "DB_NAME", "value": "xxxxxxxx"},
+        {"name": "DB_PASS", "value": "xxxxxxxxxxxxxxxxxxxxxxxxxx"},
+        {"name": "DB_PORT", "value": "0000"},
+        {"name": "DB_USER", "value": "xxxxxxxx"},
+        {"name": "DEPLOY_DATE", "value": "1466876553"},
+        {"name": "REDIS_DB", "value": "0"},
+        {"name": "REDIS_HOST", "value": "xxx-xxxxx.xxxxxx.xxx.xxxxx.xxxxxxxxx.xxx"},
+        {"name": "REDIS_PORT", "value": "0000"},
+        {"name": "SMTP_HOST", "value": "xxxxx-xxxx.xx-xxxx-x.xxxxxxxxx.xxx"},
+        {"name": "SMTP_PASS", "value": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"},
+        {"name": "SMTP_PORT", "value": "0000"},
+        {"name": "SMTP_USER", "value": "xxxxxxxxxxxxxxxxxxxx"}
+    ],
+    "mountPoints": [],
+    "volumesFrom": [],
+    "extraHosts": [],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-region": "eu-central-1",
+        "awslogs-group": "shp-stage"
+      }
+    },
+    "ulimits": [],
+    "dockerLabels": {
+      "app": "shp-stage"
+    }
+  }
+]
